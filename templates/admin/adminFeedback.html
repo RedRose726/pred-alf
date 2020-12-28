@@ -1,0 +1,27 @@
+{% extends 'admin/admin_pages.html' %}
+{% block body %}
+
+
+<form id="form1" name="form1" method="get" action="">
+
+<div align="center">
+  <table class="table table-striped m-b-7">
+    <tr>
+      <th height="53"><div align="center"><strong>Sl.no</strong></div></th>
+      <th><div align="center"><strong>Date</strong></div></th>
+      <th><div align="center"><strong>Name</strong></div></th>
+      <th><div align="center"><strong>Feedback</strong></div></th>
+    </tr>
+      {% for i in feeds %}
+    <tr>
+        <td height="62"><div align="center">{{ loop.index }}</div></td>
+        <td><div align="center">{{ i['fdate'] }}&nbsp;</div></td>
+        <td>&nbsp;<div align="center">{{ i['name'] }}</div></td>
+        <td><div align="center">{{ i['feedback'] }}&nbsp;</div></td>
+    </tr>
+      {% endfor %}
+  </table>
+</div>
+</form>
+
+{% endblock %}

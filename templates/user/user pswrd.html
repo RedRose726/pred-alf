@@ -1,0 +1,89 @@
+{#  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title> #}
+
+{% extends 'user/user_pages.html' %}
+{% block body %}
+
+    <script>
+function validate()
+{
+	var flag=true;
+    if(document.getElementById("textfield").value=="")
+    {
+	    document.getElementById("a").style.visibility="visible";
+	    flag=false;
+    }
+    else
+    {
+	    document.getElementById("a").style.visibility="hidden";
+    }
+
+     if(document.getElementById("textfield2").value=="")
+    {
+	    document.getElementById("b").style.visibility="visible";
+	    flag=false;
+    }
+    else
+    {
+	    document.getElementById("b").style.visibility="hidden";
+    }
+
+     if(document.getElementById("textfield3").value=="")
+    {
+	    document.getElementById("c").style.visibility="visible";
+	    flag=false;
+    }
+    else
+    {
+	    document.getElementById("c").style.visibility="hidden";
+    }
+
+    return flag;
+}
+</script>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="/change"><div align="center">
+
+  <table width="300" border="0" class="table table-striped m-b-3">
+    <tr>
+      <th><strong>Current Password</strong></th>
+      <th><label for="textfield"></label>
+      <input type="password" name="textfield" id="textfield" /></th>
+      <th>
+	    <div id="a" style="visibility:hidden" align="center"><font color="#FF0000">Invalid Entry!!</font></div>
+		</th>
+    </tr>
+
+    <tr>
+      <th><strong>New Password</strong></th>
+      <th><label for="textfield2"></label>
+      <input type="password" name="textfield2" id="textfield2" /></th>
+      <th>
+	    <div id="b" style="visibility:hidden" align="center"><font color="#FF0000">Invalid Entry!!</font></div>
+		</th>
+    </tr>
+
+    <tr>
+      <th><strong>Confirm Password</strong></th>
+      <th><label for="textfield3"></label>
+      <input type="password" name="textfield3" id="textfield3" /></th>
+      <th>
+	    <div id="c" style="visibility:hidden" align="center"><font color="#FF0000">Invalid Entry!!</font></div>
+		</th>
+    </tr>
+
+    <tr>
+      <td align="left"><input type="submit" class="btn btn-success" name="button" id="button" value="Update" onclick="return validate()" /></td>
+      <td> <a href="/user_profile"><input type="button" class="btn btn-info" name="button1" id="button" value="Cancel" /></a></td>
+    </tr>
+  </table>
+</div>
+</form>
+</body>
+{% endblock %}
+{#  </html> #}

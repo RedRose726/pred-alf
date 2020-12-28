@@ -1,0 +1,29 @@
+{% extends 'user/user_pages.html' %}
+{% block body %}
+
+<body><form action="" method="get">
+<br>
+<div align="center">
+    <div align="left"><a href="/user_newcmplnt"><font color="blue"> New Complaint</font></a>
+</div>
+<table class="table table-striped m-b-3">
+  <tr>
+      <th><div align="center"><strong>Sl.no</strong></div></th>
+      <th><div align="center"><strong>Date</strong></div></th>
+      <th><div align="center"><strong>Complaint</strong></div></th>
+      <th><div align="center"><strong>Response</strong></div></th>
+  </tr>
+    {% for i in ucmplnts %}
+  <tr>
+      <td><div align="center">{{ loop.index }}</div></td>
+      <td><div align="center">&nbsp;{{ i['cdate'] }}</div></td>
+      <td><div align="center">{{ i['complaint'] }}</div></td>
+      <td><div align="center">{{ i['response'] }}</div></td>
+  </tr>
+    {% endfor %}
+</table>
+</div>
+</form>
+</body>
+
+{% endblock %}

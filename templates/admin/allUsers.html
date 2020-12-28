@@ -1,0 +1,48 @@
+ {# <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>#}
+
+{% extends 'admin/admin_pages.html' %}
+{% block body %}
+
+
+<form action="" method="get">
+
+<div align="center">
+  <table class="table table-striped m-b-7">
+    <tr>
+      <th height="58"><div align="center"><strong>Sl/no</strong></div></th>
+      <th><div align="center"><strong>Name</strong></div></th>
+      <th><div align="center"><strong>Gender</strong></div></th>
+      <th><div align="center"><strong>DOB</strong></div></th>
+      <th><div align="center"><strong>Email</strong></div></th>
+      <th><div align="center"><strong>Action</strong></div></th>
+    </tr>
+      {% for i in data %}
+    <tr>
+        <td height="93"><div align="center">{{ loop.index }}</div></td>
+        <td><div align="center">{{ i['name'] }}</div></td>
+        <td><div align="center">{{ i['gender'] }}</div></td>
+        <td><div align="center">{{ i['dob'] }}&nbsp;</div></td>
+        <td><div align="center">{{ i['mail'] }}</div></td>
+        <td><p align="center"><button type="submit" class="btn btn-default"> <a href="/rem/{{ i['loginid'] }}">remove</a></button></p>
+
+          {% if i['type']=="user" %}
+              <p align="center"><button type="submit" class="btn btn-default"> <a href="/block/{{ i['loginid']}}/blocked">block</a></button></p>
+
+      {% elif i['type']=="blocked" %}
+              <p align="center"><button type="submit" class="btn btn-success"> <a href="/block/{{ i['loginid']}}/user">unblock</a></button></p>
+          {% endif %}
+      </td>
+    </tr>
+      {% endfor %}
+  </table>
+</div>
+</form>
+
+{% endblock %}
+{#  </body>
+</html> #}

@@ -1,0 +1,44 @@
+{#  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head> #}
+
+{% extends 'user/user_pages.html' %}
+{% block body %}
+
+<body><form action="" method="get">
+
+  <div align="center">
+    <table class="table table-striped m-b-3">
+
+      <tr>
+        <th colspan="2"><div align="center"><strong>My Profile</strong></div></th>
+      </tr>
+
+      <tr>
+        <td><strong>Name:</strong></td>
+        <td><label for="textarea"></label>{{ data['name'] }}</td>
+      </tr>
+      <tr>
+        <td><strong>Gender:</strong></td>
+        <td><label for="textarea2"></label>{{ data['gender'] }}</td>
+      </tr>
+      <tr>
+        <td><strong>DOB:</strong></td>
+        <td><label for="textarea3"></label>{{ data['dob'] }}</td>
+      </tr>
+      <tr>
+        <td><strong>EMail:</strong></td>
+        <td><label for="textarea4"></label>{{ data['mail'] }}</td>
+      </tr>
+      <tr>
+        <td colspan="2" align="right"><a href="/chpswrd"><font color="blue"> change password</font></a></td>
+      </tr>
+    </table>
+  </div>
+</form>
+</body>
+
+{% endblock %}

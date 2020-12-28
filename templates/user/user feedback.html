@@ -1,0 +1,53 @@
+{#   <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+#}
+
+{% extends 'user/user_pages.html' %}
+{% block body %}
+
+    <script>
+function validate()
+{
+	var flag=true;
+    if(document.getElementById("textfield").value=="")
+    {
+	    document.getElementById("a").style.visibility="visible";
+	    flag=false;
+    }
+    else
+    {
+	    document.getElementById("a").style.visibility="hidden";
+    }
+
+    return flag;
+}
+</script>
+
+</head>
+
+<body><form action="/fd" method="post">
+
+     <div align="center">
+  <table class="table table-striped m-b-3">
+  <tr></tr>
+  <tr>
+    <th><strong>Feedback:</strong></th>
+    <th><label for="textfield"></label>
+      <input type="text" name="textfield" id="textfield" /></th>
+
+      <th>
+	    <div id="a" style="visibility:hidden" align="center"><font color="#FF0000">Invalid Entry!!</font></div>
+		</th>
+  </tr>
+  <tr>
+    <td colspan="2" align="center"><input type="submit" class="btn btn-success" name="button" id="button" value="Submit" onclick="return validate()" /></td>
+  </tr>
+  </table>
+     </div>
+</form>
+</body>
+
+{% endblock %}

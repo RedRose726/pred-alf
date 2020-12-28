@@ -1,0 +1,37 @@
+{% extends 'admin/admin_pages.html' %}
+{% block body %}
+
+<form action="" method="get">
+
+<div align="center">
+    <table class="table table-striped m-b-7">
+  <tr>
+    <th height="62"><div align="center"><strong>Sl/no</strong></div></th>
+    <th><div align="center"><strong>Date</strong></div></th>
+    <th><div align="center"><strong>Name</strong></div></th>
+    <th><div align="center"><strong>E-mail</strong></div></th>
+    <th><div align="center"><strong>Complaint</strong></div></th>
+{#    <td><div align="center"><strong>Status</strong></div></td>#}
+    <th><div align="center"><strong>Action</strong></div></th>
+  </tr>
+    {% for i in cmplnts %}
+  <tr>
+      <td height="79"><div align="center">{{ loop.index }}</div></td>
+      <td><div align="center">{{ i['cdate'] }}&nbsp;</div></td>
+      <td><div align="center">{{ i['name'] }}&nbsp;</div></td>
+      <td><div align="center">{{ i['mail'] }}&nbsp;</div></td>
+      <td><div align="center">{{ i['complaint'] }}&nbsp;</div></td>
+    <td>
+        {% if i['response']=='pending' %}
+            <div align="center">
+                <button type="submit" class="btn btn-success"> <a href="/adm_viewCmplnt/{{ i['cmpid'] }}/{{ i['complaint'] }}">Reply</a></button></div>
+    {% else %}
+            <div align="center">{{ i['response'] }}</div>
+        {% endif %}
+    </td>
+  </tr>
+    {% endfor %}
+</table>
+</div>
+</form>
+{% endblock %}

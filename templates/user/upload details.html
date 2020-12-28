@@ -1,0 +1,87 @@
+{# <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head> #}
+
+{% extends 'user/user_pages.html' %}
+{% block body %}
+
+<body>
+<br>
+<center><strong>Please enter the following details of the patient</strong></center>
+<form action="/det" method="post">
+    <br>
+     <div align="center">
+  <table class="table table-striped m-b-3">
+    <tr>
+      <th width="44">Age:</th>
+      <th width="168"><label for="textfield"></label>
+      <input type="number" name="textfield" id="textfield" /></th>
+    </tr>
+    <tr>
+     <th width="44">Gender:</th>
+      <th><label for="radio"></label>
+      <input type="radio" name="radio" id="radio"  value="0"/><strong>Male</strong>
+      <input type="radio" name="radio" id="radio"  value="1"/><strong>Female</strong>
+      </th>
+    </tr>
+    <tr>
+     <th width="44">Total Bilirubin:</th>
+      <th><label for="textfield3"></label>
+      <input type="text" name="textfield3" id="textfield3" /></th>
+    </tr>
+    <tr>
+      <th width="44">Direct Bilirubin:</th>
+      <th><label for="textfield4"></label>
+      <input type="text" name="textfield4" id="textfield4" /></th>
+    </tr>
+    <tr>
+      <th width="44">Alkaline Phosphotase:</th>
+      <th><label for="textfield5"></label>
+      <input type="text" name="textfield5" id="textfield5" /></th>
+    </tr>
+    <tr>
+     <th width="44">Alamine Aminotransferase:</th>
+      <th><label for="textfield6"></label>
+      <input type="text" name="textfield6" id="textfield6" /></th>
+    </tr>
+    <tr>
+      <th width="44">Aspartate Aminotransferase:</th>
+      <th><label for="textfield7"></label>
+      <input type="text" name="textfield7" id="textfield7" /></th>
+    </tr>
+    <tr>
+      <th width="44">Total Protiens:</th>
+      <th><label for="textfield8"></label>
+      <input type="text" name="textfield8" id="textfield8" /></th>
+    </tr>
+    <tr>
+      <th width="44">Albumin:</th>
+      <th><label for="textfield9"></label>
+      <input type="text" name="textfield9" id="textfield9" /></th>
+    </tr>
+    <tr>
+      <th width="44">Albumin and Globulin Ratio:</th>
+      <th><label for="textfield10"></label>
+      <input type="text" name="textfield10" id="textfield10" /></th>
+    </tr>
+
+    <tr>
+      <td colspan="3"><div align="center">
+        <input type="submit" class="btn btn-success" name="button" id="button" value="Submit" />
+      </div></td>
+    </tr>
+  </table>
+
+         <br>
+         {% if predict!=NULL %}
+             <div align="center"><strong>Result: </strong>{{ predict }}</div>
+         {% endif %}
+
+     </div>
+</form>
+</body>
+
+{% endblock %}

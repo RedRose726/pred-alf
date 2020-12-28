@@ -1,0 +1,166 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{##}
+{#<body>#}
+{#<form action="/regist" method="post">#}
+{#    <div align="center">#}
+{#  <table width="300" border="0">#}
+{#    <tr>#}
+{#      <td><strong>Full Name</strong></td>#}
+{#      <td><label for="textfield"></label>#}
+{#        <label for="textfield2"></label>#}
+{#      <input type="text" name="textfield" id="textfield2" /></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td><strong>Gender</strong></td>#}
+{#      <td><label for="textfield3"></label>#}
+{#        <input type="radio" name="radio" id="radio" value="Male" />#}
+{#        <label for="radio"></label>#}
+{#<label for="checkbox"><strong>Male</strong><br />#}
+{#  <input type="radio" name="radio" id="radio" value="Female" />#}
+{#  <strong>Female</strong> </label></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td><strong>DOB</strong></td>#}
+{#      <td><label for="textfield3"></label>#}
+{#        <label for="textfield4"></label>#}
+{#      <input type="date" name="textfield3" id="textfield4" /></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td><strong>EMail(username)</strong></td>#}
+{#      <td><label for="textfield4"></label>#}
+{#        <label for="textfield5"></label>#}
+{#      <input type="email" name="textfield4" id="textfield5" /></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td><strong>Password</strong></td>#}
+{#      <td><label for="textfield7"></label>#}
+{#      <input type="password" name="textfield2" id="textfield7" /></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td><strong>Confirm Password</strong></td>#}
+{#      <td><label for="textfield6"></label>        <input type="password" name="textfield5" id="textfield6" />        <label for="textfield5"></label></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td colspan="2" align="center"><input type="submit" name="button" id="button" value="Register" /></td>#}
+{#    </tr>#}
+{#  </table>#}
+{#    </div>#}
+{#</form>#}
+{#</body>#}
+{#</html>#}
+{#################################################################################}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Signup</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="../static/login_temp/images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../static/login_temp/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../static/login_temp/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../static/login_temp/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../static/login_temp/vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../static/login_temp/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../static/login_temp/vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../static/login_temp/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../static/login_temp/vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../static/login_temp/css/util.css">
+	<link rel="stylesheet" type="text/css" href="../static/login_temp/css/main.css">
+<!--===============================================================================================-->
+</head>
+<body>
+
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-form-title" style="background-image: url(../static/login_temp/images/bg-01.jpg);">
+					<span class="login100-form-title-1">
+						Sign Up
+					</span>
+				</div>
+
+				<form class="login100-form validate-form" method="post" action="/regist">
+					<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
+						<span class="label-input100">Fullname</span>
+						<input class="input100" type="text" name="textfield" placeholder="Enter username">
+						<span class="focus-input100"></span>
+					</div>
+<div class="wrap-input100 validate-input m-b-26" >
+						<span class="label-input100">Gender</span>
+						<input  type="radio" name="radio" value="F">Female
+    <input  type="radio" name="radio" value="M">Male
+
+					</div>
+                    <div class="wrap-input100 validate-input m-b-26" data-validate="Dob is required">
+						<span class="label-input100">Date of birth</span>
+						<input class="input100" type="date" name="textfield3" placeholder="Enter dob">
+						<span class="focus-input100"></span>
+					</div>
+                     <div class="wrap-input100 validate-input m-b-26" data-validate="Email is required">
+						<span class="label-input100">Email</span>
+						<input class="input100" type="text" name="textfield4" placeholder="Enter email">
+						<span class="focus-input100"></span>
+					</div>
+					<div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
+						<span class="label-input100">Password</span>
+						<input class="input100" type="password" name="textfield2" placeholder="Enter password">
+						<span class="focus-input100"></span>
+					</div>
+                    <div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
+						<span class="label-input100">Confirm Password</span>
+						<input class="input100" type="password" name="textfield5" placeholder="Confirm Password">
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="flex-sb-m w-full p-b-30">
+
+						<div>
+
+						</div>
+					</div>
+
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn" type="submit">
+							Signup
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+<!--===============================================================================================-->
+	<script src="../static/login_temp/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../static/login_temp/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../static/login_temp/vendor/bootstrap/js/popper.js"></script>
+	<script src="../static/login_temp/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../static/login_temp/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../static/login_temp/vendor/daterangepicker/moment.min.js"></script>
+	<script src="../static/login_temp/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="../static/login_temp/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="../static/login_temp/js/main.js"></script>
+
+</body>
+</html>
